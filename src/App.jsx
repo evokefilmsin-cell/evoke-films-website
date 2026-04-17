@@ -327,7 +327,7 @@ export default function EvokeFilmsServicesWebsite() {
   name="contact"
   method="POST"
   data-netlify="true"
-  action="/"
+  action="/#contact"
   className="space-y-5"
 >
   <input type="hidden" name="form-name" value="contact" />
@@ -371,9 +371,7 @@ export default function EvokeFilmsServicesWebsite() {
   </div>
 
   <button
-  type="submit"
-  className="w-full rounded-full bg-red-500 hover:bg-red-400 text-white py-4 font-semibold text-lg transition shadow-[0_20px_40px_rgba(255,59,59,0.2)]"
->
+  type="submit">
   Send Inquiry
 </button>
 </form>
