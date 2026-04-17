@@ -315,44 +315,60 @@ export default function EvokeFilmsServicesWebsite() {
 
       <div className="relative bg-white rounded-[2.5rem] border border-black/10 p-8 md:p-10 shadow-[0_30px_80px_rgba(0,0,0,0.08)] overflow-hidden">
   <div className="absolute top-0 right-0 w-40 h-40 bg-red-500/10 blur-[80px] rounded-full" />
-        <div className="space-y-5"> 
-         <div>
-  <label className="block text-sm uppercase tracking-[0.2em] text-zinc-400 mb-3">
-    Name
-  </label>
-  <input
-    type="text"
-    placeholder="Your Name"
-    className="w-full rounded-2xl border border-black/10 px-5 py-4 outline-none focus:border-red-500 transition"
-  />
-</div>
+        <form
+  name="contact"
+  method="POST"
+  data-netlify="true"
+  className="space-y-5"
+>
+  <input type="hidden" name="form-name" value="contact" />
 
-          <div>
-  <label className="block text-sm uppercase tracking-[0.2em] text-zinc-400 mb-3">
-    Email
-  </label>
-  <input
-    type="email"
-    placeholder="Email Address"
-    className="w-full rounded-2xl border border-black/10 px-5 py-4 outline-none focus:border-red-500 transition"
-  />
-</div>
+  <div>
+    <label className="block text-sm uppercase tracking-[0.2em] text-zinc-400 mb-3">
+      Name
+    </label>
+    <input
+      type="text"
+      name="name"
+      placeholder="Your Name"
+      required
+      className="w-full rounded-2xl border border-black/10 px-5 py-4 outline-none focus:border-red-500 transition"
+    />
+  </div>
 
-          <div>
-  <label className="block text-sm uppercase tracking-[0.2em] text-zinc-400 mb-3">
-    Project Details
-  </label>
-  <textarea
-    placeholder="Tell us about your project"
-    rows="5"
-    className="w-full rounded-2xl border border-black/10 px-5 py-4 outline-none focus:border-red-500 transition resize-none"
-  />
-</div>
+  <div>
+    <label className="block text-sm uppercase tracking-[0.2em] text-zinc-400 mb-3">
+      Email
+    </label>
+    <input
+      type="email"
+      name="email"
+      placeholder="Email Address"
+      required
+      className="w-full rounded-2xl border border-black/10 px-5 py-4 outline-none focus:border-red-500 transition"
+    />
+  </div>
 
-          <button className="w-full rounded-full bg-red-500 hover:bg-red-400 text-white py-4 font-semibold text-lg transition shadow-[0_20px_40px_rgba(255,59,59,0.2)]">
-            Send Inquiry
-          </button>
-        </div>
+  <div>
+    <label className="block text-sm uppercase tracking-[0.2em] text-zinc-400 mb-3">
+      Project Details
+    </label>
+    <textarea
+      name="message"
+      placeholder="Tell us about your project"
+      rows="5"
+      required
+      className="w-full rounded-2xl border border-black/10 px-5 py-4 outline-none focus:border-red-500 transition resize-none"
+    />
+  </div>
+
+  <button
+    type="submit"
+    className="w-full rounded-full bg-red-500 hover:bg-red-400 text-white py-4 font-semibold text-lg transition shadow-[0_20px_40px_rgba(255,59,59,0.2)]"
+  >
+    Send Inquiry
+  </button>
+</form>
       </div>
     </div>
   </div>
