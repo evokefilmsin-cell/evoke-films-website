@@ -35,10 +35,11 @@ export default function EvokeFilmsServicesWebsite() {
   return (
   <>
     <form name="contact" data-netlify="true" hidden>
-      <input type="text" name="name" />
-      <input type="email" name="email" />
-      <textarea name="message"></textarea>
-    </form>
+  <input type="hidden" name="form-name" value="contact" />
+  <input type="text" name="name" />
+  <input type="email" name="email" />
+  <textarea name="message"></textarea>
+</form>
 
     <div className="min-h-screen bg-[#f8f5f4] text-black">
       {/* Hero */}
@@ -326,13 +327,10 @@ export default function EvokeFilmsServicesWebsite() {
   name="contact"
   method="POST"
   data-netlify="true"
-  netlify-honeypot="bot-field"
   action="/"
   className="space-y-5"
 >
   <input type="hidden" name="form-name" value="contact" />
-  <input type="hidden" name="bot-field" />
-  <input type="hidden" name="subject" value="New Evoke Films Inquiry" />
   <div>
     <label className="block text-sm uppercase tracking-[0.2em] text-zinc-400 mb-3">
       Name
