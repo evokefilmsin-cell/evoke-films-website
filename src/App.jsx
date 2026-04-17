@@ -33,7 +33,14 @@ export default function EvokeFilmsServicesWebsite() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#f7f2f1] text-black font-sans">
+  <>
+    <form name="contact" data-netlify="true" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <textarea name="message"></textarea>
+    </form>
+
+    <div className="min-h-screen bg-[#f8f5f4] text-black">
       {/* Hero */}
       <nav className="sticky top-0 z-50 backdrop-blur-xl bg-white/70 border-b border-black/5">
   <div className="max-w-7xl mx-auto px-6 lg:px-12 py-5 flex items-center justify-between">
@@ -319,10 +326,12 @@ export default function EvokeFilmsServicesWebsite() {
   name="contact"
   method="POST"
   data-netlify="true"
-  action="/?success=true"
+  netlify-honeypot="bot-field"
+  action="/"
   className="space-y-5"
 >
   <input type="hidden" name="form-name" value="contact" />
+  <input type="hidden" name="bot-field" />
   <input type="hidden" name="subject" value="New Evoke Films Inquiry" />
   <div>
     <label className="block text-sm uppercase tracking-[0.2em] text-zinc-400 mb-3">
@@ -426,6 +435,7 @@ export default function EvokeFilmsServicesWebsite() {
     </p>
   </div>
 </footer>
-    </div>
-  );
+      </div>
+  </>
+);
 }
