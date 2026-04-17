@@ -327,10 +327,25 @@ export default function EvokeFilmsServicesWebsite() {
   name="contact"
   method="POST"
   data-netlify="true"
-  action="/#contact"
   className="space-y-5"
+  onSubmit={async (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+    const data = new FormData(form);
+
+    await fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(data).toString(),
+    });
+
+    alert("Inquiry sent successfully!");
+    form.reset();
+  }}
 >
   <input type="hidden" name="form-name" value="contact" />
+<input type="hidden" name="subject" value="New Evoke Films Inquiry" />
   <div>
     <label className="block text-sm uppercase tracking-[0.2em] text-zinc-400 mb-3">
       Name
